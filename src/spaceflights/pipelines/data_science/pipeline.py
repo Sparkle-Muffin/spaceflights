@@ -8,7 +8,7 @@ from kedro.pipeline import Pipeline, pipeline, node
 from .nodes import split_data, train_model, evaluate_model
 
 def create_pipeline(**kwargs) -> Pipeline:
-    return pipeline([
+    pipeline_instance = pipeline([
         node(
             func=split_data,
             inputs=["model_input_table", "params:model_options"],
@@ -25,3 +25,17 @@ def create_pipeline(**kwargs) -> Pipeline:
             outputs=None
         )
     ])
+    
+    ds_pipeline_1 = pipeline(
+        pipe=pipeline_instance,
+        inputs="model_input_table",
+        namespace="active_modelling_pipeline"
+    )
+
+    ds_pipeline_2 = pipeline(
+        pipe=pipeline_instance,
+        inputs="model_input_table",
+        namespace="candidate_modelling_pipeline"
+    )
+
+    return ds_pipeline_1 + ds_pipeline_2
