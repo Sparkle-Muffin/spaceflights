@@ -15,7 +15,9 @@ from sklearn.linear_model import LinearRegression
 def split_data(df: pd.DataFrame, parameters: t.Dict) -> t.Tuple:
     X = df[parameters["features"]]
     y = df["price"]
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=parameters["test_size"])
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=parameters["test_size"]
+    )
     return X_train, X_test, y_train, y_test
 
 
@@ -25,7 +27,9 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LinearRegression:
     return model
 
 
-def evaluate_model(regressor: LinearRegression, X_test: pd.DataFrame, y_test: pd.Series):
+def evaluate_model(
+    regressor: LinearRegression, X_test: pd.DataFrame, y_test: pd.Series
+):
     y_pred = regressor.predict(X_test)
     score = r2_score(y_true=y_test, y_pred=y_pred)
     logger = logging.getLogger(__name__)
