@@ -33,3 +33,7 @@ model_input_table:
   type: pickle.PickleDataset
   filepath: data/06_models/regressor_{subtype}.pkl
   versioned: true
+
+dense_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/dense_model.pkl
