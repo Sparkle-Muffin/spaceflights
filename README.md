@@ -2,8 +2,8 @@
 
 ## Overview
 
-The spaceflights project is a ML/DL project provided by Kedro to work with their [great tutorial] (https://www.youtube.com/playlist?list=PL-JJgymPjK5LddZXbIzp9LWurkLGgB-nY).
-As you can read in the [Kedro documentation] (https://docs.kedro.org/en/stable/tutorial/spaceflights_tutorial.html), in this project "You want to construct a model that predicts the price for each trip to the Moon and the corresponding return flight."
+The spaceflights project is a ML/DL project provided by Kedro to work with their [great tutorial](https://www.youtube.com/playlist?list=PL-JJgymPjK5LddZXbIzp9LWurkLGgB-nY).
+As you can read in the [Kedro documentation](https://docs.kedro.org/en/stable/tutorial/spaceflights_tutorial.html), in this project "You want to construct a model that predicts the price for each trip to the Moon and the corresponding return flight."
 
 ## Action Plan
 
